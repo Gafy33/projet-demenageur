@@ -425,10 +425,10 @@
     top: 0;
     left: 0;
     height: 80%;
-    width: 80%;
+    width: 100%;
     overflow: hidden;
     filter: blur(var(--blur));
-    transform: rotate(41deg) translate(-18%, -36%);
+    transform: translate(0%, -36%);
     opacity: 0;
     transition: opacity var(--transition) var(--transition);
     background: radial-gradient(circle at 50% 100%, rgba(242,236,217,0.85), transparent 60%);
@@ -1296,20 +1296,6 @@
   .chair__back div:nth-of-type(2) {
     background: var(--chair-two);
     border: calc((1 * var(--cm)) * 1vmin) solid var(--chair-accent-two);
-  }
-  .chair__back div:nth-of-type(3):after {
-    content: '';
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 40%;
-    width: 40%;
-    filter: brightness(1);
-    transition: filter var(--transition);
-    background: url("https://www.iut.u-bordeaux.fr/info/assets/images/logo_ENT_Bx.png");
-    background-size: contain;
-    background-repeat: no-repeat;
   }
   .chair__top {
     height: 100%;

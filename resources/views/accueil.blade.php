@@ -68,7 +68,9 @@
                startups that slash emissions, remove carbon, and cool the planet.</p>
         </div>
         <div class="w-1/2 h-full flex justify-center items-center">
-            <iframe class="w-full h-full mt-32 xl:mt-16" src="{{asset('assets/iframes/iframe_piece.html')}}"></iframe>
+            @if( $iframe == "ok" )
+                <iframe class="w-full h-full mt-32 xl:mt-16" src="{{asset('assets/iframes/iframe_piece.html')}}"></iframe>
+            @endif
         </div>
     </div>
     <div class="absolute bottom-16 xl:bottom-28 left-0 flex justify-center items-center w-full">
@@ -104,11 +106,6 @@
             <p id="scan_meuble_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">Over 9 months, you will work with us to uncover high-impact opportunities and shape the most promising idea into a new venture.</p>
             <p id="scan_meuble_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">Receive funding, mentorship, hands-on support, access to an unparalleled pool of experts, potential co-founders and advisors.</p>
             <p id="scan_meuble_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">If you succeed, we become your first investor and help you raise a seed round.</p>
-            <!--<div class="flex flex-col justify-center items-center mt-12">
-                <button class="relative flex justify-center items-center group border border-white bg-black rounded-full group hover:bg-white duration-150 ease-in-out">
-                    <ion-icon class="w-8 h-8 p-4 text-white group-hover:text-black rounded-full" name="chevron-down-outline"></ion-icon>
-                </button>
-            </div>-->
         </div>
     </div>
     <div id="visualisation__" class="w-full flex flex-row">
@@ -122,11 +119,6 @@
             <p id="visualisation_3d_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">Over 9 months, you will work with us to uncover high-impact opportunities and shape the most promising idea into a new venture.</p>
             <p id="visualisation_3d_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">Receive funding, mentorship, hands-on support, access to an unparalleled pool of experts, potential co-founders and advisors.</p>
             <p id="visualisation_3d_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">If you succeed, we become your first investor and help you raise a seed round.</p>
-            <!--<div class="flex flex-col justify-center items-center mt-12">
-                <button class="relative flex justify-center items-center group border border-white bg-black rounded-full group hover:bg-white duration-150 ease-in-out">
-                    <ion-icon class="w-8 h-8 p-4 text-white group-hover:text-black rounded-full" name="chevron-down-outline"></ion-icon>
-                </button>
-            </div>-->
         </div>
         <div class="w-1/2 flex flex-col justify-center items-center min-h-screen">
             <div class="cube">
@@ -162,11 +154,6 @@
             <p id="deplacement_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">Over 9 months, you will work with us to uncover high-impact opportunities and shape the most promising idea into a new venture.</p>
             <p id="deplacement_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">Receive funding, mentorship, hands-on support, access to an unparalleled pool of experts, potential co-founders and advisors.</p>
             <p id="deplacement_text" class="text-lg xl:text-xl text-[#9C9C9C] mt-12">If you succeed, we become your first investor and help you raise a seed round.</p>
-            <!--<div class="flex flex-col justify-center items-center mt-12">
-                <button class="relative flex justify-center items-center group border border-white bg-black rounded-full group hover:bg-white duration-150 ease-in-out">
-                    <ion-icon class="w-8 h-8 p-4 text-white group-hover:text-black rounded-full" name="chevron-down-outline"></ion-icon>
-                </button>
-            </div>-->
         </div>
     </div>
 </div>
@@ -335,243 +322,8 @@
          FOOTER
     </div>
 </div>
-
-<script>
-    // controller 
-    var controller = new ScrollMagic.Controller();
-
-    // Tween
-    var tween_banner_text = TweenMax.staggerFromTo('#banner_text', 1,
-            {opacity: 0, y: 100},
-            {opacity: 1, y: 0}, 0.1);
-
-
-    var tween_scan_text = TweenMax.staggerFromTo('#scan_meuble_text', 1,
-            {opacity: 0, x: 100},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_visu_text = TweenMax.staggerFromTo('#visualisation_3d_text', 1,
-            {opacity: 0, x: -100},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_depla = TweenMax.staggerFromTo('#deplacement_text', 1,
-            {opacity: 0, x: 100},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_box_qui = TweenMax.staggerFromTo('#box_qui', 1,
-            {opacity: 0, y: 100},
-            {opacity: 1, y: 0}, 0.1);
-
-    // phase 1
-    var tween_roadmap_left_1 = TweenMax.staggerFromTo('#roadmap_left_1', 0.5,
-            {opacity: 0, x: 50},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_roadmap_right_1 = TweenMax.staggerFromTo('#roadmap_right_1', 0.5,
-            {opacity: 0, x: -50},
-            {opacity: 1, x: 0}, 0.1);
-
-    // phase 2
-    var tween_roadmap_left_2 = TweenMax.staggerFromTo('#roadmap_left_2', 0.5,
-            {opacity: 0, x: 50},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_roadmap_right_2 = TweenMax.staggerFromTo('#roadmap_right_2', 0.5,
-            {opacity: 0, x: -50},
-            {opacity: 1, x: 0}, 0.1);
-
-    // phase 3
-    var tween_roadmap_left_3 = TweenMax.staggerFromTo('#roadmap_left_3', 0.5,
-            {opacity: 0, x: 50},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_roadmap_right_3 = TweenMax.staggerFromTo('#roadmap_right_3', 0.5,
-            {opacity: 0, x: -50},
-            {opacity: 1, x: 0}, 0.1);
-
-    // phase 4
-    var tween_roadmap_left_4 = TweenMax.staggerFromTo('#roadmap_left_4', 0.5,
-            {opacity: 0, x: 50},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_roadmap_right_4 = TweenMax.staggerFromTo('#roadmap_right_4', 0.5,
-            {opacity: 0, x: -50},
-            {opacity: 1, x: 0}, 0.1);
-
-    // phase 5
-    var tween_roadmap_left_5 = TweenMax.staggerFromTo('#roadmap_left_5', 0.5,
-            {opacity: 0, x: 50},
-            {opacity: 1, x: 0}, 0.1);
-
-    var tween_roadmap_right_5 = TweenMax.staggerFromTo('#roadmap_right_5', 0.5,
-            {opacity: 0, x: -50},
-            {opacity: 1, x: 0}, 0.1);
-
-
-    var tween_roadmap_cube_1 = TweenMax.staggerFromTo('#roadmap_cube_1', 0.5,
-            {opacity: 0, scale: 0},
-            {opacity: 1, scale: 1}, 0.1);
-
-    var tween_roadmap_cube_2 = TweenMax.staggerFromTo('#roadmap_cube_2', 0.5,
-            {opacity: 0, scale: 0},
-            {opacity: 1, scale: 1}, 0.1);
-
-    var tween_roadmap_cube_3 = TweenMax.staggerFromTo('#roadmap_cube_3', 0.5,
-            {opacity: 0, scale: 0},
-            {opacity: 1, scale: 1}, 0.1);
-
-    var tween_roadmap_cube_4 = TweenMax.staggerFromTo('#roadmap_cube_4', 0.5,
-            {opacity: 0, scale: 0},
-            {opacity: 1, scale: 1}, 0.1);
-
-    var tween_roadmap_cube_5 = TweenMax.staggerFromTo('#roadmap_cube_5', 0.5,
-            {opacity: 0, scale: 0},
-            {opacity: 1, scale: 1}, 0.1);
-            
-
-
-   // Scene ScrollMagic
-    var scene = new ScrollMagic.Scene({triggerElement: "#scan__", offset: -100})
-                                     .triggerHook(0.4)
-                                     //.addIndicators({name: "scan", colorTrigger: "red", indent:200})
-                                     .setTween(tween_scan_text)
-                                     .reverse(false)
-                                     .addTo(controller)
-
-    var scene2 = new ScrollMagic.Scene({triggerElement: "#visualisation__", offset: -100})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "visu", colorTrigger: "blue", indent:300})
-                                    .setTween(tween_visu_text)
-                                    .reverse(false)
-                                    .addTo(controller)
-
-    var scene3 = new ScrollMagic.Scene({triggerElement: "#deplacement__", offset: -200})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_depla)
-                                    .reverse(false)
-                                    .addTo(controller)
-
-    var scene4 = new ScrollMagic.Scene({triggerElement: "#qui__", offset: -200})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_box_qui)
-                                    .reverse(false)
-                                    .addTo(controller)
-
-    //Phase 1
-    var scene5 = new ScrollMagic.Scene({triggerElement: "#roadmap", offset: -150})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_left_1)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scene6 = new ScrollMagic.Scene({triggerElement: "#roadmap", offset: -150})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_right_1)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scenecube1 = new ScrollMagic.Scene({triggerElement: "#roadmap", offset: -150})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_cube_1)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    //phase 2
-    var scene7 = new ScrollMagic.Scene({triggerElement: "#roadmap_right_1", offset: -250})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_left_2)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scene8 = new ScrollMagic.Scene({triggerElement: "#roadmap_right_1", offset: -250})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:600})
-                                    .setTween(tween_roadmap_right_2)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scenecube2 = new ScrollMagic.Scene({triggerElement: "#roadmap_right_1", offset: -250})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_cube_2)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    //phase 3
-    var scene9 = new ScrollMagic.Scene({triggerElement: "#roadmap_left_2", offset: -260})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_left_3)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scene10 = new ScrollMagic.Scene({triggerElement: "#roadmap_left_2", offset: -260})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_right_3)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scenecube3 = new ScrollMagic.Scene({triggerElement: "#roadmap_left_2", offset: -260})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_cube_3)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    //phase 4
-    var scene11 = new ScrollMagic.Scene({triggerElement: "#roadmap_right_3", offset: -280})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_left_4)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scene12 = new ScrollMagic.Scene({triggerElement: "#roadmap_right_3", offset: -280})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_right_4)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scenecube4 = new ScrollMagic.Scene({triggerElement: "#roadmap_right_3", offset: -280})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_cube_4)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    //phase 6
-    var scene13 = new ScrollMagic.Scene({triggerElement: "#roadmap_left_4", offset: -280})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla_1", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_left_5)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scene14 = new ScrollMagic.Scene({triggerElement: "#roadmap_left_4", offset: -280})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_right_5)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-    var scenecube5 = new ScrollMagic.Scene({triggerElement: "#roadmap_left_4", offset: -280})
-                                    .triggerHook(0.4)
-                                    //.addIndicators({name: "depla", colorTrigger: "yellow", indent:400})
-                                    .setTween(tween_roadmap_cube_5)
-                                    .reverse(true)
-                                    .addTo(controller)
-
-   </script>
-
 </body>
+<script src="{{asset('assets/script/script.js')}}"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>

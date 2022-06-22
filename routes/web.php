@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('accueil');
+    return view('accueil')->with('iframe', "nok");
 });
+
+Route::get('/iframe', function () {
+    return view('accueil')->with('iframe', "ok");
+});
+
